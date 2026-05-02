@@ -6,100 +6,345 @@
   <title>Privacy Policy — Shiqo / سياسة الخصوصية — شِيْكُو</title>
   <style>
     :root {
-      --primary: #7C3AED;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #ffffff;
-      --section-bg: #f9fafb;
+      --primary:        #7B5EA7;
+      --primary-light:  #EDE9F5;
+      --primary-dark:   #5C4282;
+      --bg:             #F8F7F9;
+      --bg-elevated:    #FFFFFF;
+      --bg-subtle:      #F0EFF4;
+      --text-primary:   #1A1820;
+      --text-secondary: #8A8696;
+      --text-tertiary:  #B8B4C2;
+      --border:         #E8E6EE;
+      --error:          #D94F4F;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Arabic', sans-serif;
-      color: var(--text);
+      color: var(--text-primary);
       background: var(--bg);
       line-height: 1.7;
     }
-    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
-    .lang-toggle {
-      display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 32px;
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(155deg, #130A24 0%, #0D0618 55%, #1A0D30 100%);
+      padding: 52px 24px 44px;
+      text-align: center;
     }
-    .lang-toggle button {
-      padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--primary);
-      background: transparent; color: var(--primary); font-size: 14px; cursor: pointer;
-      font-weight: 600; transition: all 0.2s;
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      margin: 0 auto 18px;
+      display: block;
+      box-shadow: 0 0 0 1px rgba(192,162,255,0.22), 0 10px 40px rgba(100,60,200,0.45);
     }
-    .lang-toggle button.active { background: var(--primary); color: #fff; }
-    .header { text-align: center; margin-bottom: 48px; }
-    .header .logo { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-    .header h1 { font-size: 22px; font-weight: 700; margin-top: 8px; }
-    .header .dates { font-size: 13px; color: var(--muted); margin-top: 8px; }
-    h2 {
-      font-size: 17px; font-weight: 700; color: var(--primary);
-      margin: 36px 0 12px; padding-bottom: 8px;
-      border-bottom: 2px solid var(--border);
+    .hero-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
     }
-    p { margin-bottom: 12px; font-size: 15px; }
-    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    .hero-page-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+    .hero-dates {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    /* ── LANG BAR ── */
+    .lang-bar {
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      padding: 10px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 6px rgba(26,24,32,0.06);
+    }
+    .lang-pills {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      border-radius: 999px;
+      padding: 3px;
+    }
+    .lang-pills button {
+      padding: 5px 22px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: inherit;
+    }
+    .lang-pills button.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(123,94,167,0.35);
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+    }
+    .intro {
+      font-size: 15px;
+      color: var(--text-secondary);
+      padding: 4px 4px 12px;
+      line-height: 1.65;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-elevated);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 6px rgba(26,24,32,0.04);
+    }
+    .card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    p { margin-bottom: 10px; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 20px; margin-bottom: 10px; }
     li { font-size: 15px; margin-bottom: 6px; }
-    .table-wrap { overflow-x: auto; margin: 16px 0; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th { background: var(--section-bg); padding: 10px 14px; text-align: left; font-weight: 600; border: 1px solid var(--border); }
-    td { padding: 9px 14px; border: 1px solid var(--border); vertical-align: top; }
-    .highlight {
-      background: var(--section-bg); border-left: 4px solid var(--primary);
-      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
+    li:last-child { margin-bottom: 0; }
+
+    /* ── TABLES ── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-top: 12px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 420px; }
+    thead tr { background: var(--primary-light); }
+    th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
       font-size: 14px;
     }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .contact-box {
-      background: var(--section-bg); border-radius: 12px;
-      padding: 20px 24px; margin-top: 16px;
-    }
-    .contact-box p { margin: 4px 0; font-size: 14px; }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: var(--bg); }
 
-    /* Arabic section */
+    /* ── HIGHLIGHT ── */
+    .highlight {
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--bg-subtle);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      margin-top: 12px;
+    }
+    .contact-box p { font-size: 14px; margin: 3px 0; }
+
+    a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+    .footer-links a { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+    .footer p { font-size: 12px; color: var(--text-tertiary); }
+
+    /* ── ARABIC ── */
     .ar { display: none; direction: rtl; text-align: right; }
-    .ar h2 { text-align: right; }
     .ar ul, .ar ol { padding-left: 0; padding-right: 20px; }
     .ar th { text-align: right; }
-    .ar .highlight { border-left: none; border-right: 4px solid var(--primary); border-radius: 8px 0 0 8px; }
-    .ar .lang-toggle { justify-content: flex-start; }
+    .ar .highlight {
+      border-left: none;
+      border-right: 3px solid var(--primary);
+      border-radius: 10px 0 0 10px;
+    }
+    .ar .card h2 { flex-direction: row-reverse; }
 
-    /* Active states */
     .en.hidden, .ar.hidden { display: none !important; }
     .en:not(.hidden) { display: block; }
     .ar:not(.hidden) { display: block; }
   </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- ═══════════════════════════ ENGLISH ═══════════════════════════ -->
-  <div class="en" id="section-en">
-    <div class="lang-toggle">
-      <button class="active" onclick="showLang('en')">English</button>
-      <button onclick="showLang('ar')">العربية</button>
-    </div>
+<!-- ── HERO ─────────────────────────────────────────── -->
+<div class="hero">
+  <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+    <defs>
+      <linearGradient id="pp-bg" x1="0" y1="0" x2="260" y2="260" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#130A24"/>
+        <stop offset="50%" stop-color="#0D0618"/>
+        <stop offset="100%" stop-color="#180C2C"/>
+      </linearGradient>
+      <linearGradient id="pp-refl" x1="148" y1="68" x2="218" y2="215" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(238,220,255,0.97)"/>
+        <stop offset="100%" stop-color="rgba(185,148,255,0.85)"/>
+      </linearGradient>
+      <linearGradient id="pp-sheen" x1="152" y1="78" x2="168" y2="130" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(220,200,255,0.16)"/>
+        <stop offset="100%" stop-color="rgba(220,200,255,0)"/>
+      </linearGradient>
+      <linearGradient id="pp-mir" x1="130" y1="44" x2="130" y2="222" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(180,140,255,0)"/>
+        <stop offset="28%" stop-color="rgba(200,160,255,0.40)"/>
+        <stop offset="50%" stop-color="rgba(218,178,255,0.68)"/>
+        <stop offset="72%" stop-color="rgba(200,160,255,0.40)"/>
+        <stop offset="100%" stop-color="rgba(180,140,255,0)"/>
+      </linearGradient>
+      <linearGradient id="pp-crown" x1="148" y1="42" x2="218" y2="76" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#F5E272"/>
+        <stop offset="45%" stop-color="#CB9C2A"/>
+        <stop offset="100%" stop-color="#8A6412"/>
+      </linearGradient>
+      <radialGradient id="pp-wave" cx="0%" cy="50%" r="100%" gradientUnits="objectBoundingBox">
+        <stop offset="0%" stop-color="rgba(210,175,255,0.22)"/>
+        <stop offset="40%" stop-color="rgba(190,150,255,0.10)"/>
+        <stop offset="100%" stop-color="rgba(170,130,255,0)"/>
+      </radialGradient>
+      <filter id="pp-crownGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="pp-sparkGlow" x="-120%" y="-120%" width="340%" height="340%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="pp-waveBlur" x="-10%" y="-20%" width="120%" height="140%">
+        <feGaussianBlur stdDeviation="4"/>
+      </filter>
+      <clipPath id="pp-rightOnly"><rect x="130" y="44" width="130" height="178"/></clipPath>
+      <clipPath id="pp-iconClip"><rect x="0" y="0" width="260" height="260" rx="58" ry="58"/></clipPath>
+    </defs>
+    <g clip-path="url(#pp-iconClip)">
+      <rect x="0" y="0" width="260" height="260" fill="url(#pp-bg)"/>
+      <circle cx="168" cy="100" r="30" fill="url(#pp-refl)"/>
+      <ellipse cx="156" cy="88" rx="7" ry="16" fill="url(#pp-sheen)" transform="rotate(-12 156 88)"/>
+      <path d="M 118 222 C 118 174 138 155 168 153 C 198 155 218 174 218 222" fill="url(#pp-refl)" opacity="0.95"/>
+      <circle cx="168" cy="100" r="42" fill="rgba(120,60,255,0.05)"/>
+      <circle cx="168" cy="44" r="14" fill="rgba(200,160,50,0.09)" filter="url(#pp-crownGlow)"/>
+      <line x1="150" y1="63" x2="186" y2="63" stroke="url(#pp-crown)" stroke-width="2.2" stroke-linecap="round" opacity="0.72" filter="url(#pp-crownGlow)"/>
+      <line x1="155" y1="63" x2="150" y2="51" stroke="url(#pp-crown)" stroke-width="2.4" stroke-linecap="round" opacity="0.90" filter="url(#pp-crownGlow)"/>
+      <line x1="168" y1="63" x2="168" y2="46" stroke="url(#pp-crown)" stroke-width="2.4" stroke-linecap="round" filter="url(#pp-crownGlow)"/>
+      <line x1="181" y1="63" x2="186" y2="51" stroke="url(#pp-crown)" stroke-width="2.4" stroke-linecap="round" opacity="0.90" filter="url(#pp-crownGlow)"/>
+      <circle cx="168" cy="44" r="5.5" fill="url(#pp-crown)" filter="url(#pp-crownGlow)"/>
+      <circle cx="149" cy="50" r="3.8" fill="url(#pp-crown)" opacity="0.92"/>
+      <circle cx="187" cy="50" r="3.8" fill="url(#pp-crown)" opacity="0.92"/>
+      <line x1="130" y1="44" x2="130" y2="222" stroke="url(#pp-mir)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="125" y1="88"  x2="135" y2="88"  stroke="rgba(210,180,255,0.28)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="116" x2="135" y2="116" stroke="rgba(210,180,255,0.22)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="144" x2="135" y2="144" stroke="rgba(210,180,255,0.16)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="172" x2="135" y2="172" stroke="rgba(210,180,255,0.10)" stroke-width="0.8" stroke-linecap="round"/>
+      <ellipse cx="130" cy="100" rx="55" ry="38" fill="url(#pp-wave)" filter="url(#pp-waveBlur)" clip-path="url(#pp-rightOnly)" opacity="0.90"/>
+      <ellipse cx="130" cy="100" rx="80" ry="52" fill="none" stroke="rgba(200,160,255,0.08)" stroke-width="1" clip-path="url(#pp-rightOnly)" filter="url(#pp-waveBlur)"/>
+      <circle cx="130" cy="100" r="10" fill="rgba(215,185,255,0.12)" filter="url(#pp-sparkGlow)"/>
+      <circle cx="130" cy="100" r="5"  fill="rgba(225,200,255,0.28)" filter="url(#pp-sparkGlow)"/>
+      <circle cx="130" cy="100" r="2.8" fill="rgba(240,225,255,0.92)"/>
+      <circle cx="100" cy="100" r="30" fill="#0D0618"/>
+      <path d="M 48 222 C 48 177 68 157 100 155 C 132 157 152 177 152 222" fill="#0D0618"/>
+      <circle cx="100" cy="100" r="28" fill="none" stroke="rgba(192,162,255,0.45)" stroke-width="2.5"/>
+      <path d="M 50 220 C 50 176 70 157 100 155 C 130 157 150 176 150 220" fill="none" stroke="rgba(192,162,255,0.45)" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <div class="hero-name" id="hero-name">Shiqo</div>
+  <div class="hero-page-title" id="hero-page-title">Privacy Policy</div>
+  <div class="hero-dates" id="hero-dates">Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026</div>
+</div>
 
-    <div class="header">
-      <div class="logo">Shiqo</div>
-      <h1>Privacy Policy</h1>
-      <div class="dates">Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026</div>
-    </div>
+<!-- ── LANG BAR ──────────────────────────────────────── -->
+<div class="lang-bar">
+  <div class="lang-pills">
+    <button class="active" id="btn-en" onclick="showLang('en')">English</button>
+    <button id="btn-ar" onclick="showLang('ar')">العربية</button>
+  </div>
+</div>
 
-    <p>Welcome to <strong>Shiqo</strong> ("we", "us", or "our"). This Privacy Policy explains how we collect, use, share, and protect information about you when you use the Shiqo mobile application (the "App"). By using the App you agree to the practices described in this policy.</p>
+<!-- ════════════════════════ ENGLISH ════════════════════════ -->
+<div class="en content" id="section-en">
+  <p class="intro">Welcome to <strong>Shiqo</strong>. This Privacy Policy explains how we collect, use, share, and protect information about you when you use the Shiqo mobile application. By using the App you agree to the practices described in this policy.</p>
 
-    <h2>1. Who We Are</h2>
-    <p>Shiqo is a social outfit battle and voting platform. You can contact us at:</p>
+  <div class="card">
+    <h2><span class="card-num">1</span> Who We Are</h2>
+    <p>Shiqo is a social outfit battle and voting platform.</p>
     <div class="contact-box">
       <p><strong>Email:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>Website:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
+  </div>
 
-    <h2>2. Information We Collect</h2>
-
+  <div class="card">
+    <h2><span class="card-num">2</span> Information We Collect</h2>
     <p><strong>2.1 Account Information</strong></p>
     <ul>
       <li>Email address (required for registration)</li>
@@ -109,16 +354,14 @@
       <li>Country (optional)</li>
       <li>Profile photo (optional)</li>
     </ul>
-
-    <p><strong>2.2 Automatically Collected Information</strong></p>
+    <p style="margin-top:12px;"><strong>2.2 Automatically Collected Information</strong></p>
     <ul>
       <li><strong>IP address</strong> — collected at registration and each time you upload a photo, for legal compliance and fraud prevention. Your IP is sent to a third-party geolocation service (ip-api.com) to determine your approximate city and country.</li>
       <li>Push notification token (device token for delivering notifications)</li>
       <li>Device type and operating system</li>
       <li>App usage data: login dates, vote history, streak counts</li>
     </ul>
-
-    <p><strong>2.3 User-Generated Content</strong></p>
+    <p style="margin-top:12px;"><strong>2.3 User-Generated Content</strong></p>
     <ul>
       <li>Outfit photos you upload</li>
       <li>Comments you post (optionally anonymously)</li>
@@ -126,118 +369,120 @@
       <li>Hashtags and style poll responses</li>
       <li>Support messages</li>
     </ul>
-
-    <p><strong>2.4 Purchase and Subscription Information</strong></p>
+    <p style="margin-top:12px;"><strong>2.4 Purchase and Subscription Information</strong></p>
     <ul>
       <li>Purchase history for Shiqo Coins and Prime subscriptions</li>
       <li>Store transaction identifiers (via RevenueCat) — we do <strong>not</strong> store full payment card details</li>
       <li>Subscription status and trial dates</li>
     </ul>
+  </div>
 
-    <h2>3. How We Use Your Information</h2>
+  <div class="card">
+    <h2><span class="card-num">3</span> How We Use Your Information</h2>
     <div class="table-wrap">
       <table>
-        <tr>
-          <th>Purpose</th>
-          <th>Data Used</th>
-          <th>Legal Basis</th>
-        </tr>
-        <tr><td>Operate the App and provide core features (voting, battles, leaderboards)</td><td>All account and usage data</td><td>Contract performance</td></tr>
-        <tr><td>Send push notifications (new followers, challenges, results)</td><td>Push token, notification preferences</td><td>Consent (opt-in)</td></tr>
-        <tr><td>Process in-app purchases and subscriptions</td><td>Purchase data, transaction IDs</td><td>Contract performance</td></tr>
-        <tr><td>Automatic content moderation (detect explicit imagery)</td><td>Uploaded photos sent to AI moderation service</td><td>Legitimate interest (platform safety)</td></tr>
-        <tr><td>Admin analytics (aggregate usage stats, city distribution)</td><td>IP-derived city, usage data</td><td>Legitimate interest (service improvement)</td></tr>
-        <tr><td>Legal compliance, fraud prevention, and moderation</td><td>IP address, account data, violation history</td><td>Legal obligation / Legitimate interest</td></tr>
+        <thead><tr><th>Purpose</th><th>Data Used</th><th>Legal Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Operate the App and provide core features (voting, battles, leaderboards)</td><td>All account and usage data</td><td>Contract performance</td></tr>
+          <tr><td>Send push notifications (new followers, challenges, results)</td><td>Push token, notification preferences</td><td>Consent (opt-in)</td></tr>
+          <tr><td>Process in-app purchases and subscriptions</td><td>Purchase data, transaction IDs</td><td>Contract performance</td></tr>
+          <tr><td>Automatic content moderation (detect explicit imagery)</td><td>Uploaded photos sent to Sightengine AI service</td><td>Legitimate interest (platform safety)</td></tr>
+          <tr><td>Admin analytics (aggregate usage stats, city distribution)</td><td>IP-derived city, usage data</td><td>Legitimate interest (service improvement)</td></tr>
+          <tr><td>Legal compliance, fraud prevention, and moderation</td><td>IP address, account data, violation history</td><td>Legal obligation / Legitimate interest</td></tr>
+        </tbody>
       </table>
     </div>
+  </div>
 
-    <h2>4. Third-Party Services</h2>
+  <div class="card">
+    <h2><span class="card-num">4</span> Third-Party Services</h2>
     <p>We share data with the following service providers solely to operate the App:</p>
     <div class="table-wrap">
       <table>
-        <tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr>
-        <tr><td><strong>Supabase</strong> (supabase.com)</td><td>Database, authentication, and file storage (hosted on AWS)</td><td>All user data and uploaded files</td></tr>
-        <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>In-app purchase and subscription management</td><td>User ID, purchase and subscription records</td></tr>
-        <tr><td><strong>ip-api.com</strong></td><td>IP geolocation (city/country detection)</td><td>Your IP address</td></tr>
-        <tr><td><strong>AI Content Moderation Service</strong></td><td>Automatic detection of explicit content in uploaded photos</td><td>Photo URL (public link, no personal identifiers)</td></tr>
-        <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>Push notifications</td><td>Device push token</td></tr>
+        <thead><tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Supabase</strong> (supabase.com)</td><td>Database, authentication, and file storage (hosted on AWS)</td><td>All user data and uploaded files</td></tr>
+          <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>In-app purchase and subscription management</td><td>User ID, purchase and subscription records</td></tr>
+          <tr><td><strong>ip-api.com</strong></td><td>IP geolocation (city/country detection)</td><td>Your IP address</td></tr>
+          <tr><td><strong>Sightengine</strong> (sightengine.com) — AI-powered content moderation company</td><td>Automatic detection of explicit content in uploaded photos</td><td>Photo URL (public link, no personal identifiers)</td></tr>
+          <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>Push notifications</td><td>Device push token</td></tr>
+        </tbody>
       </table>
     </div>
-    <p>We do not sell your personal data. We do not share it with advertisers or use it for cross-app tracking.</p>
+    <p style="margin-top:12px; color: var(--text-secondary); font-size:14px;">We do not sell your personal data. We do not share it with advertisers or use it for cross-app tracking.</p>
+  </div>
 
-    <h2>5. Data Retention</h2>
+  <div class="card">
+    <h2><span class="card-num">5</span> Data Retention</h2>
     <ul>
       <li><strong>Active accounts:</strong> Data is retained as long as your account is active.</li>
-      <li><strong>After account deletion:</strong> Personal data is deleted within 30 days. IP addresses associated with uploads may be retained for up to 12 months for legal compliance purposes.</li>
+      <li><strong>After account deletion:</strong> Personal data is deleted within 30 days. IP addresses associated with uploads may be retained for up to 12 months for legal compliance.</li>
       <li><strong>Backups:</strong> Residual copies may remain in encrypted backups for up to 90 days.</li>
     </ul>
+  </div>
 
-    <h2>6. Your Rights</h2>
+  <div class="card">
+    <h2><span class="card-num">6</span> Your Rights</h2>
     <p>Depending on where you live, you may have the following rights regarding your personal data:</p>
     <ul>
       <li><strong>Access</strong> — request a copy of the data we hold about you</li>
       <li><strong>Correction</strong> — ask us to fix inaccurate information</li>
-      <li><strong>Deletion</strong> — request deletion of your account and personal data (also available directly in the App under Settings → Delete Account)</li>
+      <li><strong>Deletion</strong> — request deletion of your account and personal data (also available in the App under Settings → Delete Account)</li>
       <li><strong>Portability</strong> — receive your data in a structured format</li>
       <li><strong>Objection / Restriction</strong> — object to certain processing activities</li>
       <li><strong>Withdraw Consent</strong> — opt out of push notifications at any time in your device settings</li>
     </ul>
-    <p>To exercise any of these rights, email us at <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. We will respond within 30 days.</p>
+    <p style="margin-top:10px;">To exercise any of these rights, email us at <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. We will respond within 30 days.</p>
+    <div class="highlight"><strong>GDPR (EU/EEA users):</strong> We process your data under the lawful bases of contract performance, legitimate interest, and consent. You have the right to lodge a complaint with your local supervisory authority.</div>
+    <div class="highlight" style="margin-top:8px;"><strong>CCPA (California residents):</strong> You have the right to know what data we collect, to request deletion, and to opt out of the sale of personal information. We do not sell personal information.</div>
+    <div class="highlight" style="margin-top:8px;"><strong>PDPL (Saudi Arabia):</strong> We comply with the Personal Data Protection Law. You may contact us to exercise your data rights as described above.</div>
+  </div>
 
-    <div class="highlight">
-      <strong>GDPR (EU/EEA users):</strong> We process your data under the lawful bases of contract performance, legitimate interest, and consent. You have the right to lodge a complaint with your local supervisory authority.
-    </div>
-    <div class="highlight">
-      <strong>CCPA (California residents):</strong> You have the right to know what data we collect, to request deletion, and to opt out of the sale of personal information. We do not sell personal information.
-    </div>
-    <div class="highlight">
-      <strong>PDPL (Saudi Arabia):</strong> We comply with the Personal Data Protection Law. You may contact us to exercise your data rights as described above.
-    </div>
+  <div class="card">
+    <h2><span class="card-num">7</span> Children's Privacy</h2>
+    <p>Shiqo is not intended for users under the age of 16. We do not knowingly collect data from anyone under 16. If we discover that a user is under 16, we will delete their account immediately. If you believe a child has provided us with data, please contact <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
+  </div>
 
-    <h2>7. Children's Privacy</h2>
-    <p>Shiqo is not intended for users under the age of 16. We do not knowingly collect data from anyone under 16. If we discover that a user is under 16, we will delete their account. If you believe a child has provided us with data, please contact <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
-
-    <h2>8. Security</h2>
+  <div class="card">
+    <h2><span class="card-num">8</span> Security</h2>
     <p>All data is transmitted over HTTPS/TLS. Your data is stored in Supabase (hosted on AWS) with industry-standard security practices. Passwords are managed by Supabase Auth and are never stored in plain text.</p>
+  </div>
 
-    <h2>9. Cookies and Tracking</h2>
+  <div class="card">
+    <h2><span class="card-num">9</span> Cookies and Tracking</h2>
     <p>Shiqo is a mobile application and does not use browser cookies. We do not use third-party advertising SDKs or cross-app tracking technologies.</p>
+  </div>
 
-    <h2>10. Changes to This Policy</h2>
+  <div class="card">
+    <h2><span class="card-num">10</span> Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top and, for material changes, notify you via push notification or in-app message. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+  </div>
 
-    <h2>11. Contact Us</h2>
+  <div class="card">
+    <h2><span class="card-num">11</span> Contact Us</h2>
+    <p>For any privacy-related questions or requests:</p>
     <div class="contact-box">
-      <p>For any privacy-related questions or requests:</p>
       <p><strong>Email:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>Website:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
   </div>
+</div>
 
-  <!-- ═══════════════════════════ ARABIC ═══════════════════════════ -->
-  <div class="ar hidden" id="section-ar">
-    <div class="lang-toggle">
-      <button onclick="showLang('en')">English</button>
-      <button class="active" onclick="showLang('ar')">العربية</button>
-    </div>
+<!-- ════════════════════════ ARABIC ════════════════════════ -->
+<div class="ar content hidden" id="section-ar">
+  <p class="intro">مرحباً بك في <strong>شِيْكُو</strong>. توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها ومشاركتها وحمايتها عند استخدام التطبيق. باستخدامك للتطبيق فأنت توافق على الممارسات الموضحة في هذه السياسة.</p>
 
-    <div class="header">
-      <div class="logo">شِيْكُو</div>
-      <h1>سياسة الخصوصية</h1>
-      <div class="dates">تاريخ النفاذ: 25 أبريل 2026 &nbsp;·&nbsp; آخر تحديث: 25 أبريل 2026</div>
-    </div>
-
-    <p>مرحباً بك في <strong>شِيْكُو</strong> ("نحن" أو "التطبيق"). توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها ومشاركتها وحمايتها عند استخدام تطبيق شِيْكُو. باستخدامك للتطبيق فأنت توافق على الممارسات الموضحة في هذه السياسة.</p>
-
-    <h2>١. من نحن</h2>
-    <p>شِيْكُو هي منصة اجتماعية لمعارك الأزياء والتصويت. يمكنك التواصل معنا عبر:</p>
+  <div class="card">
+    <h2><span class="card-num">١</span> من نحن</h2>
+    <p>شِيْكُو هي منصة اجتماعية لمعارك الأزياء والتصويت.</p>
     <div class="contact-box">
       <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>الموقع:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
+  </div>
 
-    <h2>٢. المعلومات التي نجمعها</h2>
-
+  <div class="card">
+    <h2><span class="card-num">٢</span> المعلومات التي نجمعها</h2>
     <p><strong>٢.١ معلومات الحساب</strong></p>
     <ul>
       <li>عنوان البريد الإلكتروني (مطلوب للتسجيل)</li>
@@ -247,16 +492,14 @@
       <li>الدولة (اختياري)</li>
       <li>صورة الملف الشخصي (اختياري)</li>
     </ul>
-
-    <p><strong>٢.٢ المعلومات المجمّعة تلقائياً</strong></p>
+    <p style="margin-top:12px;"><strong>٢.٢ المعلومات المجمّعة تلقائياً</strong></p>
     <ul>
-      <li><strong>عنوان IP</strong> — يُجمع عند التسجيل وعند كل رفع صورة، لأغراض الامتثال القانوني ومنع الاحتيال. يُرسل عنوان IP إلى خدمة تحديد الموقع الجغرافي التابعة لطرف ثالث (ip-api.com) لتحديد المدينة والدولة التقريبية.</li>
+      <li><strong>عنوان IP</strong> — يُجمع عند التسجيل وعند كل رفع صورة، لأغراض الامتثال القانوني ومنع الاحتيال. يُرسل عنوان IP إلى خدمة تحديد الموقع الجغرافي (ip-api.com) لتحديد المدينة والدولة التقريبية.</li>
       <li>رمز الإشعارات (Push Token) الخاص بجهازك</li>
       <li>نوع الجهاز ونظام التشغيل</li>
       <li>بيانات استخدام التطبيق: تواريخ تسجيل الدخول، سجل التصويت، عداد التتابع</li>
     </ul>
-
-    <p><strong>٢.٣ المحتوى الذي ينشئه المستخدمون</strong></p>
+    <p style="margin-top:12px;"><strong>٢.٣ المحتوى الذي ينشئه المستخدمون</strong></p>
     <ul>
       <li>صور الأزياء التي ترفعها</li>
       <li>التعليقات التي تكتبها (باختيارك بشكل مجهول)</li>
@@ -264,102 +507,133 @@
       <li>الهاشتاقات واستجابات استطلاعات الأسلوب</li>
       <li>رسائل الدعم الفني</li>
     </ul>
-
-    <p><strong>٢.٤ معلومات الشراء والاشتراك</strong></p>
+    <p style="margin-top:12px;"><strong>٢.٤ معلومات الشراء والاشتراك</strong></p>
     <ul>
       <li>سجل الشراء لشِيْكُو كوينز واشتراك Prime</li>
       <li>معرّفات معاملات المتجر (عبر RevenueCat) — نحن <strong>لا</strong> نحتفظ ببيانات بطاقات الدفع الكاملة</li>
       <li>حالة الاشتراك وتواريخ الفترة التجريبية</li>
     </ul>
+  </div>
 
-    <h2>٣. كيف نستخدم معلوماتك</h2>
+  <div class="card">
+    <h2><span class="card-num">٣</span> كيف نستخدم معلوماتك</h2>
     <div class="table-wrap">
       <table>
-        <tr>
-          <th>الغرض</th>
-          <th>البيانات المستخدمة</th>
-          <th>الأساس القانوني</th>
-        </tr>
-        <tr><td>تشغيل التطبيق وتوفير الميزات الأساسية (التصويت، المعارك، لوحة المتصدرين)</td><td>جميع بيانات الحساب والاستخدام</td><td>تنفيذ العقد</td></tr>
-        <tr><td>إرسال إشعارات (متابعون جدد، تحديات، نتائج)</td><td>Push Token، تفضيلات الإشعارات</td><td>الموافقة (الاشتراك الاختياري)</td></tr>
-        <tr><td>معالجة عمليات الشراء والاشتراكات</td><td>بيانات الشراء، معرّفات المعاملات</td><td>تنفيذ العقد</td></tr>
-        <tr><td>مراقبة المحتوى تلقائياً (كشف الصور الصريحة)</td><td>الصور المرفوعة ترسل لخدمة مراقبة بالذكاء الاصطناعي</td><td>المصلحة المشروعة (سلامة المنصة)</td></tr>
-        <tr><td>تحليلات إدارية (إحصاءات مجمّعة، توزيع المدن)</td><td>المدينة المستنتجة من IP، بيانات الاستخدام</td><td>المصلحة المشروعة (تحسين الخدمة)</td></tr>
-        <tr><td>الامتثال القانوني، منع الاحتيال، الإشراف</td><td>عنوان IP، بيانات الحساب، سجل المخالفات</td><td>الالتزام القانوني / المصلحة المشروعة</td></tr>
+        <thead><tr><th>الغرض</th><th>البيانات المستخدمة</th><th>الأساس القانوني</th></tr></thead>
+        <tbody>
+          <tr><td>تشغيل التطبيق وتوفير الميزات الأساسية (التصويت، المعارك، لوحة المتصدرين)</td><td>جميع بيانات الحساب والاستخدام</td><td>تنفيذ العقد</td></tr>
+          <tr><td>إرسال إشعارات (متابعون جدد، تحديات، نتائج)</td><td>Push Token، تفضيلات الإشعارات</td><td>الموافقة (الاشتراك الاختياري)</td></tr>
+          <tr><td>معالجة عمليات الشراء والاشتراكات</td><td>بيانات الشراء، معرّفات المعاملات</td><td>تنفيذ العقد</td></tr>
+          <tr><td>مراقبة المحتوى تلقائياً (كشف الصور الصريحة)</td><td>الصور المرفوعة ترسل لخدمة Sightengine للذكاء الاصطناعي</td><td>المصلحة المشروعة (سلامة المنصة)</td></tr>
+          <tr><td>تحليلات إدارية (إحصاءات مجمّعة، توزيع المدن)</td><td>المدينة المستنتجة من IP، بيانات الاستخدام</td><td>المصلحة المشروعة (تحسين الخدمة)</td></tr>
+          <tr><td>الامتثال القانوني، منع الاحتيال، الإشراف</td><td>عنوان IP، بيانات الحساب، سجل المخالفات</td><td>الالتزام القانوني / المصلحة المشروعة</td></tr>
+        </tbody>
       </table>
     </div>
+  </div>
 
-    <h2>٤. خدمات الأطراف الثالثة</h2>
+  <div class="card">
+    <h2><span class="card-num">٤</span> خدمات الأطراف الثالثة</h2>
     <p>نشارك البيانات مع مزودي الخدمات التاليين حصراً لتشغيل التطبيق:</p>
     <div class="table-wrap">
       <table>
-        <tr><th>الخدمة</th><th>الغرض</th><th>البيانات المشاركة</th></tr>
-        <tr><td><strong>Supabase</strong> (supabase.com)</td><td>قاعدة البيانات، المصادقة، وتخزين الملفات (مستضافة على AWS)</td><td>جميع بيانات المستخدم والملفات المرفوعة</td></tr>
-        <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>إدارة المشتريات داخل التطبيق والاشتراكات</td><td>معرّف المستخدم، سجلات الشراء والاشتراك</td></tr>
-        <tr><td><strong>ip-api.com</strong></td><td>تحديد الموقع الجغرافي من IP (المدينة/الدولة)</td><td>عنوان IP الخاص بك</td></tr>
-        <tr><td><strong>خدمة مراقبة المحتوى بالذكاء الاصطناعي</strong></td><td>الكشف التلقائي عن المحتوى الصريح في الصور المرفوعة</td><td>رابط الصورة العام (دون معرّفات شخصية)</td></tr>
-        <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>الإشعارات الفورية</td><td>Push Token الخاص بجهازك</td></tr>
+        <thead><tr><th>الخدمة</th><th>الغرض</th><th>البيانات المشاركة</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Supabase</strong> (supabase.com)</td><td>قاعدة البيانات، المصادقة، وتخزين الملفات (مستضافة على AWS)</td><td>جميع بيانات المستخدم والملفات المرفوعة</td></tr>
+          <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>إدارة المشتريات داخل التطبيق والاشتراكات</td><td>معرّف المستخدم، سجلات الشراء والاشتراك</td></tr>
+          <tr><td><strong>ip-api.com</strong></td><td>تحديد الموقع الجغرافي من IP (المدينة/الدولة)</td><td>عنوان IP الخاص بك</td></tr>
+          <tr><td><strong>Sightengine</strong> (sightengine.com) — شركة متخصصة في مراقبة المحتوى بالذكاء الاصطناعي</td><td>الكشف التلقائي عن المحتوى الصريح في الصور المرفوعة</td><td>رابط الصورة العام (دون معرّفات شخصية)</td></tr>
+          <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>الإشعارات الفورية</td><td>Push Token الخاص بجهازك</td></tr>
+        </tbody>
       </table>
     </div>
-    <p>نحن لا نبيع بياناتك الشخصية، ولا نشاركها مع المعلنين، ولا نستخدمها لتتبع عبر التطبيقات.</p>
+    <p style="margin-top:12px; color: var(--text-secondary); font-size:14px;">نحن لا نبيع بياناتك الشخصية، ولا نشاركها مع المعلنين، ولا نستخدمها لتتبع عبر التطبيقات.</p>
+  </div>
 
-    <h2>٥. مدة الاحتفاظ بالبيانات</h2>
+  <div class="card">
+    <h2><span class="card-num">٥</span> مدة الاحتفاظ بالبيانات</h2>
     <ul>
       <li><strong>الحسابات النشطة:</strong> تُحتفظ بالبيانات طالما حسابك نشط.</li>
       <li><strong>بعد حذف الحساب:</strong> تُحذف البيانات الشخصية خلال 30 يوماً. قد تُحتفظ بعناوين IP المرتبطة بالرفع لمدة تصل إلى 12 شهراً لأغراض الامتثال القانوني.</li>
       <li><strong>النسخ الاحتياطية:</strong> قد تبقى نسخ متبقية في النسخ الاحتياطية المشفرة لمدة تصل إلى 90 يوماً.</li>
     </ul>
+  </div>
 
-    <h2>٦. حقوقك</h2>
+  <div class="card">
+    <h2><span class="card-num">٦</span> حقوقك</h2>
     <p>بحسب موقعك الجغرافي، قد تتمتع بالحقوق التالية بشأن بياناتك الشخصية:</p>
     <ul>
       <li><strong>الوصول</strong> — طلب نسخة من البيانات التي نحتفظ بها عنك</li>
       <li><strong>التصحيح</strong> — طلب تصحيح المعلومات غير الدقيقة</li>
-      <li><strong>الحذف</strong> — طلب حذف حسابك وبياناتك الشخصية (متاح أيضاً مباشرةً من التطبيق في الإعدادات ← حذف الحساب)</li>
+      <li><strong>الحذف</strong> — طلب حذف حسابك وبياناتك الشخصية (متاح أيضاً من التطبيق في الإعدادات ← حذف الحساب)</li>
       <li><strong>نقل البيانات</strong> — استلام بياناتك بصيغة منظمة</li>
       <li><strong>الاعتراض / التقييد</strong> — الاعتراض على أنشطة معالجة معينة</li>
       <li><strong>سحب الموافقة</strong> — إيقاف الإشعارات في أي وقت من إعدادات جهازك</li>
     </ul>
-    <p>لممارسة أي من هذه الحقوق، راسلنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. سنرد خلال 30 يوماً.</p>
+    <p style="margin-top:10px;">لممارسة أي من هذه الحقوق، راسلنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. سنرد خلال 30 يوماً.</p>
+    <div class="highlight"><strong>اللائحة الأوروبية GDPR:</strong> نعالج بياناتك بموجب أسس قانونية مشروعة. يحق لك تقديم شكوى لدى هيئة حماية البيانات المحلية.</div>
+    <div class="highlight" style="margin-top:8px;"><strong>CCPA (سكان كاليفورنيا):</strong> يحق لك معرفة البيانات التي نجمعها، طلب حذفها، والاعتراض على بيعها. نحن لا نبيع البيانات الشخصية.</div>
+    <div class="highlight" style="margin-top:8px;"><strong>نظام حماية البيانات الشخصية السعودي (PDPL):</strong> نلتزم بأحكام نظام حماية البيانات الشخصية. يمكنك التواصل معنا لممارسة حقوقك المذكورة أعلاه.</div>
+  </div>
 
-    <div class="highlight">
-      <strong>اللائحة الأوروبية GDPR (المستخدمون في الاتحاد الأوروبي / المنطقة الاقتصادية الأوروبية):</strong> نعالج بياناتك بموجب أسس قانونية مشروعة. يحق لك تقديم شكوى لدى هيئة حماية البيانات المحلية.
-    </div>
-    <div class="highlight">
-      <strong>CCPA (سكان كاليفورنيا):</strong> يحق لك معرفة البيانات التي نجمعها، طلب حذفها، والاعتراض على بيعها. نحن لا نبيع البيانات الشخصية.
-    </div>
-    <div class="highlight">
-      <strong>نظام حماية البيانات الشخصية السعودي (PDPL):</strong> نلتزم بأحكام نظام حماية البيانات الشخصية. يمكنك التواصل معنا لممارسة حقوقك المذكورة أعلاه.
-    </div>
+  <div class="card">
+    <h2><span class="card-num">٧</span> خصوصية الأطفال</h2>
+    <p>تطبيق شِيْكُو غير مخصص للمستخدمين دون سن 16 عاماً. إذا اكتشفنا أن مستخدماً أقل من 16 عاماً، سنحذف حسابه فوراً. إذا كنت تعتقد أن طفلاً قدّم لنا بياناته، يرجى التواصل معنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
+  </div>
 
-    <h2>٧. خصوصية الأطفال</h2>
-    <p>تطبيق شِيْكُو غير مخصص للمستخدمين دون سن 16 عاماً. نحن لا نجمع بيانات من أي شخص دون 16 عاماً عن علم. إذا اكتشفنا أن مستخدماً أقل من 16 عاماً، سنحذف حسابه فوراً. إذا كنت تعتقد أن طفلاً قدّم لنا بياناته، يرجى التواصل معنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
-
-    <h2>٨. الأمان</h2>
+  <div class="card">
+    <h2><span class="card-num">٨</span> الأمان</h2>
     <p>تُنقل جميع البيانات عبر بروتوكول HTTPS/TLS المشفر. تُخزَّن بياناتك في Supabase (مستضافة على AWS) وفق ممارسات أمنية معيارية. تُدار كلمات المرور عبر Supabase Auth ولا تُخزَّن بصيغة نصية عادية أبداً.</p>
+  </div>
 
-    <h2>٩. ملفات تعريف الارتباط والتتبع</h2>
+  <div class="card">
+    <h2><span class="card-num">٩</span> ملفات تعريف الارتباط والتتبع</h2>
     <p>شِيْكُو تطبيق جوّال ولا يستخدم ملفات تعريف الارتباط (Cookies). لا نستخدم SDKs إعلانية تابعة لجهات خارجية ولا تقنيات تتبع عبر التطبيقات.</p>
+  </div>
 
-    <h2>١٠. التغييرات على هذه السياسة</h2>
+  <div class="card">
+    <h2><span class="card-num">١٠</span> التغييرات على هذه السياسة</h2>
     <p>قد نحدّث سياسة الخصوصية هذه بصفة دورية. عند إجراء أي تغيير، سنحدّث تاريخ "آخر تحديث" في الأعلى، وللتغييرات الجوهرية سنخطرك عبر إشعار فوري أو رسالة داخل التطبيق. استمرارك في استخدام التطبيق بعد التغييرات يُعدّ قبولاً للسياسة المحدّثة.</p>
+  </div>
 
-    <h2>١١. تواصل معنا</h2>
+  <div class="card">
+    <h2><span class="card-num">١١</span> تواصل معنا</h2>
+    <p>لأي استفسارات أو طلبات تتعلق بالخصوصية:</p>
     <div class="contact-box">
-      <p>لأي استفسارات أو طلبات تتعلق بالخصوصية:</p>
       <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>الموقع:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
   </div>
-
 </div>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-logo">Shiqo</div>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+  <p>© 2026 Shiqo. All rights reserved.</p>
+</footer>
 
 <script>
   function showLang(lang) {
-    document.getElementById('section-en').classList.toggle('hidden', lang !== 'en');
-    document.getElementById('section-ar').classList.toggle('hidden', lang !== 'ar');
+    const isAr = lang === 'ar';
+    document.getElementById('section-en').classList.toggle('hidden', isAr);
+    document.getElementById('section-ar').classList.toggle('hidden', !isAr);
+    document.getElementById('btn-en').classList.toggle('active', !isAr);
+    document.getElementById('btn-ar').classList.toggle('active', isAr);
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+    if (isAr) {
+      document.getElementById('hero-name').textContent = 'شِيْكُو';
+      document.getElementById('hero-page-title').textContent = 'سياسة الخصوصية';
+      document.getElementById('hero-dates').textContent = 'تاريخ النفاذ: 25 أبريل 2026 · آخر تحديث: 25 أبريل 2026';
+    } else {
+      document.getElementById('hero-name').textContent = 'Shiqo';
+      document.getElementById('hero-page-title').textContent = 'Privacy Policy';
+      document.getElementById('hero-dates').innerHTML = 'Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026';
+    }
   }
 </script>
 </body>

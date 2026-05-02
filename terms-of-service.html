@@ -6,66 +6,209 @@
   <title>Terms of Service — Shiqo / شروط الاستخدام — شِيْكُو</title>
   <style>
     :root {
-      --primary: #7C3AED;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #ffffff;
-      --section-bg: #f9fafb;
+      --primary:        #7B5EA7;
+      --primary-light:  #EDE9F5;
+      --primary-dark:   #5C4282;
+      --bg:             #F8F7F9;
+      --bg-elevated:    #FFFFFF;
+      --bg-subtle:      #F0EFF4;
+      --text-primary:   #1A1820;
+      --text-secondary: #8A8696;
+      --text-tertiary:  #B8B4C2;
+      --border:         #E8E6EE;
+      --error:          #D94F4F;
+      --error-light:    #FDF0F0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Arabic', sans-serif;
-      color: var(--text);
+      color: var(--text-primary);
       background: var(--bg);
       line-height: 1.7;
     }
-    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
-    .lang-toggle {
-      display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 32px;
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(155deg, #130A24 0%, #0D0618 55%, #1A0D30 100%);
+      padding: 52px 24px 44px;
+      text-align: center;
     }
-    .lang-toggle button {
-      padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--primary);
-      background: transparent; color: var(--primary); font-size: 14px; cursor: pointer;
-      font-weight: 600; transition: all 0.2s;
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      margin: 0 auto 18px;
+      display: block;
+      box-shadow: 0 0 0 1px rgba(192,162,255,0.22), 0 10px 40px rgba(100,60,200,0.45);
     }
-    .lang-toggle button.active { background: var(--primary); color: #fff; }
-    .header { text-align: center; margin-bottom: 48px; }
-    .header .logo { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-    .header h1 { font-size: 22px; font-weight: 700; margin-top: 8px; }
-    .header .dates { font-size: 13px; color: var(--muted); margin-top: 8px; }
-    h2 {
-      font-size: 17px; font-weight: 700; color: var(--primary);
-      margin: 36px 0 12px; padding-bottom: 8px;
-      border-bottom: 2px solid var(--border);
+    .hero-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
     }
-    p { margin-bottom: 12px; font-size: 15px; }
-    ul, ol { padding-left: 20px; margin-bottom: 12px; }
-    li { font-size: 15px; margin-bottom: 6px; }
-    .highlight {
-      background: var(--section-bg); border-left: 4px solid var(--primary);
-      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
+    .hero-page-title {
       font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+      letter-spacing: 0.3px;
     }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .contact-box {
-      background: var(--section-bg); border-radius: 12px;
-      padding: 20px 24px; margin-top: 16px;
-    }
-    .contact-box p { margin: 4px 0; font-size: 14px; }
-    .warning {
-      background: #fef2f2; border-left: 4px solid #ef4444;
-      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
-      font-size: 14px;
+    .hero-dates {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
     }
 
+    /* ── LANG BAR ── */
+    .lang-bar {
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      padding: 10px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 6px rgba(26,24,32,0.06);
+    }
+    .lang-pills {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      border-radius: 999px;
+      padding: 3px;
+    }
+    .lang-pills button {
+      padding: 5px 22px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: inherit;
+    }
+    .lang-pills button.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(123,94,167,0.35);
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+    }
+    .intro {
+      font-size: 15px;
+      color: var(--text-secondary);
+      padding: 4px 4px 12px;
+      line-height: 1.65;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-elevated);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 6px rgba(26,24,32,0.04);
+    }
+    .card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    p { margin-bottom: 10px; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 20px; margin-bottom: 10px; }
+    li { font-size: 15px; margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    /* ── HIGHLIGHT ── */
+    .highlight {
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .warning-box {
+      background: var(--error-light);
+      border-left: 3px solid var(--error);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--bg-subtle);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      margin-top: 12px;
+    }
+    .contact-box p { font-size: 14px; margin: 3px 0; }
+
+    a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+    .footer-links a { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+    .footer p { font-size: 12px; color: var(--text-tertiary); }
+
+    /* ── ARABIC ── */
     .ar { display: none; direction: rtl; text-align: right; }
-    .ar h2 { text-align: right; }
     .ar ul, .ar ol { padding-left: 0; padding-right: 20px; }
-    .ar .highlight { border-left: none; border-right: 4px solid var(--primary); border-radius: 8px 0 0 8px; }
-    .ar .warning { border-left: none; border-right: 4px solid #ef4444; border-radius: 8px 0 0 8px; }
-    .ar .lang-toggle { justify-content: flex-start; }
+    .ar .highlight { border-left: none; border-right: 3px solid var(--primary); border-radius: 10px 0 0 10px; }
+    .ar .warning-box { border-left: none; border-right: 3px solid var(--error); border-radius: 10px 0 0 10px; }
+    .ar .card h2 { flex-direction: row-reverse; }
 
     .en.hidden, .ar.hidden { display: none !important; }
     .en:not(.hidden) { display: block; }
@@ -73,27 +216,109 @@
   </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- ═══════════════════════════ ENGLISH ═══════════════════════════ -->
-  <div class="en" id="section-en">
-    <div class="lang-toggle">
-      <button class="active" onclick="showLang('en')">English</button>
-      <button onclick="showLang('ar')">العربية</button>
-    </div>
+<!-- ── HERO ─────────────────────────────────────────── -->
+<div class="hero">
+  <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+    <defs>
+      <linearGradient id="tos-bg" x1="0" y1="0" x2="260" y2="260" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#130A24"/>
+        <stop offset="50%" stop-color="#0D0618"/>
+        <stop offset="100%" stop-color="#180C2C"/>
+      </linearGradient>
+      <linearGradient id="tos-refl" x1="148" y1="68" x2="218" y2="215" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(238,220,255,0.97)"/>
+        <stop offset="100%" stop-color="rgba(185,148,255,0.85)"/>
+      </linearGradient>
+      <linearGradient id="tos-sheen" x1="152" y1="78" x2="168" y2="130" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(220,200,255,0.16)"/>
+        <stop offset="100%" stop-color="rgba(220,200,255,0)"/>
+      </linearGradient>
+      <linearGradient id="tos-mir" x1="130" y1="44" x2="130" y2="222" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="rgba(180,140,255,0)"/>
+        <stop offset="28%" stop-color="rgba(200,160,255,0.40)"/>
+        <stop offset="50%" stop-color="rgba(218,178,255,0.68)"/>
+        <stop offset="72%" stop-color="rgba(200,160,255,0.40)"/>
+        <stop offset="100%" stop-color="rgba(180,140,255,0)"/>
+      </linearGradient>
+      <linearGradient id="tos-crown" x1="148" y1="42" x2="218" y2="76" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#F5E272"/>
+        <stop offset="45%" stop-color="#CB9C2A"/>
+        <stop offset="100%" stop-color="#8A6412"/>
+      </linearGradient>
+      <radialGradient id="tos-wave" cx="0%" cy="50%" r="100%" gradientUnits="objectBoundingBox">
+        <stop offset="0%" stop-color="rgba(210,175,255,0.22)"/>
+        <stop offset="40%" stop-color="rgba(190,150,255,0.10)"/>
+        <stop offset="100%" stop-color="rgba(170,130,255,0)"/>
+      </radialGradient>
+      <filter id="tos-crownGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="tos-sparkGlow" x="-120%" y="-120%" width="340%" height="340%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="tos-waveBlur" x="-10%" y="-20%" width="120%" height="140%">
+        <feGaussianBlur stdDeviation="4"/>
+      </filter>
+      <clipPath id="tos-rightOnly"><rect x="130" y="44" width="130" height="178"/></clipPath>
+      <clipPath id="tos-iconClip"><rect x="0" y="0" width="260" height="260" rx="58" ry="58"/></clipPath>
+    </defs>
+    <g clip-path="url(#tos-iconClip)">
+      <rect x="0" y="0" width="260" height="260" fill="url(#tos-bg)"/>
+      <circle cx="168" cy="100" r="30" fill="url(#tos-refl)"/>
+      <ellipse cx="156" cy="88" rx="7" ry="16" fill="url(#tos-sheen)" transform="rotate(-12 156 88)"/>
+      <path d="M 118 222 C 118 174 138 155 168 153 C 198 155 218 174 218 222" fill="url(#tos-refl)" opacity="0.95"/>
+      <circle cx="168" cy="100" r="42" fill="rgba(120,60,255,0.05)"/>
+      <circle cx="168" cy="44" r="14" fill="rgba(200,160,50,0.09)" filter="url(#tos-crownGlow)"/>
+      <line x1="150" y1="63" x2="186" y2="63" stroke="url(#tos-crown)" stroke-width="2.2" stroke-linecap="round" opacity="0.72" filter="url(#tos-crownGlow)"/>
+      <line x1="155" y1="63" x2="150" y2="51" stroke="url(#tos-crown)" stroke-width="2.4" stroke-linecap="round" opacity="0.90" filter="url(#tos-crownGlow)"/>
+      <line x1="168" y1="63" x2="168" y2="46" stroke="url(#tos-crown)" stroke-width="2.4" stroke-linecap="round" filter="url(#tos-crownGlow)"/>
+      <line x1="181" y1="63" x2="186" y2="51" stroke="url(#tos-crown)" stroke-width="2.4" stroke-linecap="round" opacity="0.90" filter="url(#tos-crownGlow)"/>
+      <circle cx="168" cy="44" r="5.5" fill="url(#tos-crown)" filter="url(#tos-crownGlow)"/>
+      <circle cx="149" cy="50" r="3.8" fill="url(#tos-crown)" opacity="0.92"/>
+      <circle cx="187" cy="50" r="3.8" fill="url(#tos-crown)" opacity="0.92"/>
+      <line x1="130" y1="44" x2="130" y2="222" stroke="url(#tos-mir)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="125" y1="88"  x2="135" y2="88"  stroke="rgba(210,180,255,0.28)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="116" x2="135" y2="116" stroke="rgba(210,180,255,0.22)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="144" x2="135" y2="144" stroke="rgba(210,180,255,0.16)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="125" y1="172" x2="135" y2="172" stroke="rgba(210,180,255,0.10)" stroke-width="0.8" stroke-linecap="round"/>
+      <ellipse cx="130" cy="100" rx="55" ry="38" fill="url(#tos-wave)" filter="url(#tos-waveBlur)" clip-path="url(#tos-rightOnly)" opacity="0.90"/>
+      <ellipse cx="130" cy="100" rx="80" ry="52" fill="none" stroke="rgba(200,160,255,0.08)" stroke-width="1" clip-path="url(#tos-rightOnly)" filter="url(#tos-waveBlur)"/>
+      <circle cx="130" cy="100" r="10" fill="rgba(215,185,255,0.12)" filter="url(#tos-sparkGlow)"/>
+      <circle cx="130" cy="100" r="5"  fill="rgba(225,200,255,0.28)" filter="url(#tos-sparkGlow)"/>
+      <circle cx="130" cy="100" r="2.8" fill="rgba(240,225,255,0.92)"/>
+      <circle cx="100" cy="100" r="30" fill="#0D0618"/>
+      <path d="M 48 222 C 48 177 68 157 100 155 C 132 157 152 177 152 222" fill="#0D0618"/>
+      <circle cx="100" cy="100" r="28" fill="none" stroke="rgba(192,162,255,0.45)" stroke-width="2.5"/>
+      <path d="M 50 220 C 50 176 70 157 100 155 C 130 157 150 176 150 220" fill="none" stroke="rgba(192,162,255,0.45)" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <div class="hero-name" id="hero-name">Shiqo</div>
+  <div class="hero-page-title" id="hero-page-title">Terms of Service</div>
+  <div class="hero-dates" id="hero-dates">Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026</div>
+</div>
 
-    <div class="header">
-      <div class="logo">Shiqo</div>
-      <h1>Terms of Service</h1>
-      <div class="dates">Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026</div>
-    </div>
+<!-- ── LANG BAR ──────────────────────────────────────── -->
+<div class="lang-bar">
+  <div class="lang-pills">
+    <button class="active" id="btn-en" onclick="showLang('en')">English</button>
+    <button id="btn-ar" onclick="showLang('ar')">العربية</button>
+  </div>
+</div>
 
-    <p>Please read these Terms of Service ("Terms") carefully before using the Shiqo mobile application ("App", "Service"). By creating an account or using the App, you agree to be bound by these Terms.</p>
+<!-- ════════════════════════ ENGLISH ════════════════════════ -->
+<div class="en content" id="section-en">
+  <p class="intro">Please read these Terms of Service carefully before using the Shiqo mobile application. By creating an account or using the App, you agree to be bound by these Terms.</p>
 
-    <h2>1. Eligibility</h2>
+  <div class="card">
+    <h2><span class="card-num">1</span> Eligibility</h2>
     <p>You must be at least <strong>16 years old</strong> to use Shiqo. By registering, you confirm that you meet this age requirement. We reserve the right to terminate accounts that we discover belong to users under 16.</p>
+  </div>
 
-    <h2>2. Account Responsibilities</h2>
+  <div class="card">
+    <h2><span class="card-num">2</span> Account Responsibilities</h2>
     <ul>
       <li>You are responsible for maintaining the confidentiality of your login credentials.</li>
       <li>You are responsible for all activity that occurs under your account.</li>
@@ -101,9 +326,11 @@
       <li>You may not create accounts on behalf of others or use another person's identity.</li>
       <li>You may only hold one active account at a time.</li>
     </ul>
+  </div>
 
-    <h2>3. Acceptable Use</h2>
-    <p>You agree to use Shiqo only for lawful purposes and in accordance with these Terms. You agree <strong>not</strong> to:</p>
+  <div class="card">
+    <h2><span class="card-num">3</span> Acceptable Use</h2>
+    <p>You agree to use Shiqo only for lawful purposes. You agree <strong>not</strong> to:</p>
     <ul>
       <li>Upload content that is nude, sexually explicit, pornographic, or obscene</li>
       <li>Upload content depicting real violence, gore, or harm to persons or animals</li>
@@ -115,21 +342,27 @@
       <li>Use automated bots to manipulate votes, rankings, or any game mechanics</li>
       <li>Circumvent or attempt to circumvent any content moderation systems</li>
     </ul>
+  </div>
 
-    <h2>4. Content Moderation and Violations</h2>
-    <p>All uploaded photos are automatically screened for explicit content using an AI moderation service. Violations are handled progressively:</p>
+  <div class="card">
+    <h2><span class="card-num">4</span> Content Moderation and Violations</h2>
+    <p>All uploaded photos are automatically screened for explicit content using <strong>Sightengine</strong>, an AI-powered content moderation service. Violations are handled progressively:</p>
     <ul>
       <li><strong>1st violation:</strong> Warning issued</li>
       <li><strong>2nd violation:</strong> Temporary ban (7 days)</li>
       <li><strong>3rd violation:</strong> Permanent ban</li>
     </ul>
     <p>We reserve the right to remove any content and suspend or terminate any account at our sole discretion for serious violations, including immediate permanent bans for illegal content.</p>
+  </div>
 
-    <h2>5. Your Content</h2>
+  <div class="card">
+    <h2><span class="card-num">5</span> Your Content</h2>
     <p>You retain ownership of the photos and content you upload to Shiqo. By uploading content, you grant Shiqo a non-exclusive, worldwide, royalty-free, sublicensable license to use, display, reproduce, and distribute your content solely for the purpose of operating and promoting the Service.</p>
     <p>You represent and warrant that your content does not violate any third-party rights and that you have the right to grant this license.</p>
+  </div>
 
-    <h2>6. Shiqo Coins and Virtual Currency</h2>
+  <div class="card">
+    <h2><span class="card-num">6</span> Shiqo Coins and Virtual Currency</h2>
     <p>Shiqo Coins ("Coins") are a virtual currency within the App. The following rules apply:</p>
     <ul>
       <li>Coins have no real-world monetary value and cannot be exchanged for cash</li>
@@ -139,68 +372,77 @@
       <li>We reserve the right to adjust coin balances if we detect fraud or abuse</li>
       <li>Unused Coins may be forfeited if your account is terminated for violations</li>
     </ul>
+  </div>
 
-    <h2>7. Prime Subscription</h2>
+  <div class="card">
+    <h2><span class="card-num">7</span> Prime Subscription</h2>
     <p>Shiqo Prime is a recurring subscription offering premium features.</p>
     <ul>
-      <li><strong>Billing:</strong> Subscriptions are billed monthly through the Apple App Store or Google Play Store. Your subscription will automatically renew at the end of each billing period unless cancelled at least 24 hours before renewal.</li>
-      <li><strong>Cancellation:</strong> You may cancel your subscription at any time through your device's App Store or Google Play settings. Cancellation takes effect at the end of the current billing period; no partial refunds are issued.</li>
+      <li><strong>Billing:</strong> Subscriptions are billed monthly through the Apple App Store or Google Play Store. Your subscription will automatically renew unless cancelled at least 24 hours before renewal.</li>
+      <li><strong>Cancellation:</strong> You may cancel at any time through your device's App Store or Google Play settings. Cancellation takes effect at the end of the current billing period; no partial refunds are issued.</li>
       <li><strong>Refunds:</strong> Refund requests are handled by Apple or Google according to their respective refund policies. We do not process subscription refunds directly.</li>
       <li><strong>Free Trials:</strong> Where offered, free trials automatically convert to paid subscriptions unless cancelled before the trial ends.</li>
       <li><strong>Feature Changes:</strong> We may modify Prime features with reasonable notice. We will not remove core features mid-subscription without offering a pro-rated refund or extension.</li>
     </ul>
+  </div>
 
-    <h2>8. Intellectual Property</h2>
+  <div class="card">
+    <h2><span class="card-num">8</span> Intellectual Property</h2>
     <p>The Shiqo name, logo, design, and all App code, graphics, and features (excluding user content) are the exclusive property of Shiqo and are protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our express written permission.</p>
+  </div>
 
-    <h2>9. Disclaimer of Warranties</h2>
+  <div class="card">
+    <h2><span class="card-num">9</span> Disclaimer of Warranties</h2>
     <p>The App is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses.</p>
+  </div>
 
-    <h2>10. Limitation of Liability</h2>
+  <div class="card">
+    <h2><span class="card-num">10</span> Limitation of Liability</h2>
     <p>To the maximum extent permitted by applicable law, Shiqo and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App, including but not limited to loss of data, loss of profits, or loss of coins.</p>
     <div class="highlight">Our total liability to you for any claim arising from these Terms shall not exceed the amount you paid us in the 12 months preceding the claim, or USD 100, whichever is greater.</div>
+  </div>
 
-    <h2>11. Termination</h2>
+  <div class="card">
+    <h2><span class="card-num">11</span> Termination</h2>
     <p>You may delete your account at any time through Settings → Delete Account. We may suspend or terminate your account if you violate these Terms. Upon termination:</p>
     <ul>
       <li>Your access to the App is immediately revoked</li>
       <li>Your content may be removed</li>
       <li>Remaining Coins and Prime benefits are forfeited without refund (unless required by law)</li>
     </ul>
+  </div>
 
-    <h2>12. Governing Law and Disputes</h2>
+  <div class="card">
+    <h2><span class="card-num">12</span> Governing Law and Disputes</h2>
     <p>These Terms are governed by applicable law. Any dispute arising from these Terms shall first be attempted to be resolved through good-faith negotiation. If unresolved within 30 days, disputes may be submitted to binding arbitration or the competent courts of the applicable jurisdiction.</p>
+  </div>
 
-    <h2>13. Changes to These Terms</h2>
+  <div class="card">
+    <h2><span class="card-num">13</span> Changes to These Terms</h2>
     <p>We may update these Terms from time to time. We will notify you of material changes via push notification or in-app message at least 7 days before they take effect. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+  </div>
 
-    <h2>14. Contact</h2>
+  <div class="card">
+    <h2><span class="card-num">14</span> Contact</h2>
+    <p>For questions about these Terms or to report violations:</p>
     <div class="contact-box">
-      <p>For questions about these Terms or to report violations:</p>
       <p><strong>Email:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>Website:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
   </div>
+</div>
 
-  <!-- ═══════════════════════════ ARABIC ═══════════════════════════ -->
-  <div class="ar hidden" id="section-ar">
-    <div class="lang-toggle">
-      <button onclick="showLang('en')">English</button>
-      <button class="active" onclick="showLang('ar')">العربية</button>
-    </div>
+<!-- ════════════════════════ ARABIC ════════════════════════ -->
+<div class="ar content hidden" id="section-ar">
+  <p class="intro">يرجى قراءة شروط الاستخدام هذه بعناية قبل استخدام تطبيق شِيْكُو. بإنشائك حساباً أو استخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط.</p>
 
-    <div class="header">
-      <div class="logo">شِيْكُو</div>
-      <h1>شروط الاستخدام</h1>
-      <div class="dates">تاريخ النفاذ: 25 أبريل 2026 &nbsp;·&nbsp; آخر تحديث: 25 أبريل 2026</div>
-    </div>
-
-    <p>يرجى قراءة شروط الاستخدام هذه ("الشروط") بعناية قبل استخدام تطبيق شِيْكُو ("التطبيق" أو "الخدمة"). بإنشائك حساباً أو استخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط.</p>
-
-    <h2>١. الأهلية</h2>
+  <div class="card">
+    <h2><span class="card-num">١</span> الأهلية</h2>
     <p>يجب أن تكون <strong>في سن 16 عاماً على الأقل</strong> لاستخدام شِيْكُو. بالتسجيل، تؤكد استيفاءك لهذا الشرط. نحتفظ بالحق في إنهاء الحسابات التي نكتشف أنها تعود لمستخدمين دون سن 16.</p>
+  </div>
 
-    <h2>٢. مسؤوليات الحساب</h2>
+  <div class="card">
+    <h2><span class="card-num">٢</span> مسؤوليات الحساب</h2>
     <ul>
       <li>أنت مسؤول عن الحفاظ على سرية بيانات تسجيل الدخول الخاصة بك.</li>
       <li>أنت مسؤول عن جميع النشاطات التي تتم عبر حسابك.</li>
@@ -208,8 +450,10 @@
       <li>لا يجوز إنشاء حسابات نيابةً عن الآخرين أو انتحال هوية شخص آخر.</li>
       <li>يُسمح بحساب واحد نشط فقط في أي وقت.</li>
     </ul>
+  </div>
 
-    <h2>٣. الاستخدام المقبول</h2>
+  <div class="card">
+    <h2><span class="card-num">٣</span> الاستخدام المقبول</h2>
     <p>توافق على استخدام شِيْكُو لأغراض مشروعة فقط. توافق <strong>على عدم</strong>:</p>
     <ul>
       <li>رفع محتوى عارٍ أو جنسي صريح أو إباحي أو فاضح</li>
@@ -222,21 +466,27 @@
       <li>استخدام روبوتات آلية للتلاعب بالتصويت أو التصنيف أو أي آليات اللعبة</li>
       <li>محاولة التحايل على أنظمة مراقبة المحتوى</li>
     </ul>
+  </div>
 
-    <h2>٤. مراقبة المحتوى والمخالفات</h2>
-    <p>تُفحص جميع الصور المرفوعة تلقائياً بحثاً عن المحتوى الصريح باستخدام خدمة مراقبة بالذكاء الاصطناعي. تُعالَج المخالفات بشكل تصاعدي:</p>
+  <div class="card">
+    <h2><span class="card-num">٤</span> مراقبة المحتوى والمخالفات</h2>
+    <p>تُفحص جميع الصور المرفوعة تلقائياً بحثاً عن المحتوى الصريح باستخدام <strong>Sightengine</strong>، وهي شركة متخصصة في مراقبة المحتوى بالذكاء الاصطناعي. تُعالَج المخالفات بشكل تصاعدي:</p>
     <ul>
       <li><strong>المخالفة الأولى:</strong> إصدار تحذير</li>
       <li><strong>المخالفة الثانية:</strong> حظر مؤقت (7 أيام)</li>
       <li><strong>المخالفة الثالثة:</strong> حظر دائم</li>
     </ul>
-    <p>نحتفظ بالحق في إزالة أي محتوى وتعليق أو إنهاء أي حساب وفق تقديرنا المنفرد في حالات المخالفات الجسيمة، بما في ذلك الحظر الدائم الفوري للمحتوى غير القانوني.</p>
+    <p>نحتفظ بالحق في إزالة أي محتوى وتعليق أو إنهاء أي حساب في حالات المخالفات الجسيمة، بما في ذلك الحظر الدائم الفوري للمحتوى غير القانوني.</p>
+  </div>
 
-    <h2>٥. محتواك</h2>
-    <p>تحتفظ بملكية الصور والمحتوى الذي ترفعه على شِيْكُو. برفع المحتوى، تمنح شِيْكُو ترخيصاً غير حصري وعالمياً وبدون مقابل مالي ولإعادة الترخيص، لاستخدام محتواك وعرضه وإعادة إنتاجه وتوزيعه حصراً لغرض تشغيل الخدمة والترويج لها.</p>
+  <div class="card">
+    <h2><span class="card-num">٥</span> محتواك</h2>
+    <p>تحتفظ بملكية الصور والمحتوى الذي ترفعه على شِيْكُو. برفع المحتوى، تمنح شِيْكُو ترخيصاً غير حصري وعالمياً وبدون مقابل مالي، لاستخدام محتواك وعرضه وإعادة إنتاجه وتوزيعه حصراً لغرض تشغيل الخدمة والترويج لها.</p>
     <p>تؤكد وتضمن أن محتواك لا ينتهك أي حقوق لأطراف ثالثة وأن لديك الحق في منح هذا الترخيص.</p>
+  </div>
 
-    <h2>٦. شِيْكُو كوينز والعملة الافتراضية</h2>
+  <div class="card">
+    <h2><span class="card-num">٦</span> شِيْكُو كوينز والعملة الافتراضية</h2>
     <p>شِيْكُو كوينز ("الكوينز") عملة افتراضية داخل التطبيق. تنطبق القواعد التالية:</p>
     <ul>
       <li>الكوينز ليس لها قيمة نقدية حقيقية ولا يمكن استبدالها بنقود</li>
@@ -246,57 +496,94 @@
       <li>نحتفظ بالحق في تعديل أرصدة الكوينز في حال اكتشاف احتيال أو إساءة استخدام</li>
       <li>قد تُصادَر الكوينز غير المستخدمة إذا أُنهي حسابك بسبب مخالفات</li>
     </ul>
+  </div>
 
-    <h2>٧. اشتراك Prime</h2>
+  <div class="card">
+    <h2><span class="card-num">٧</span> اشتراك Prime</h2>
     <p>شِيْكُو Prime اشتراك متكرر يوفر مميزات حصرية.</p>
     <ul>
-      <li><strong>الفوترة:</strong> يُفوَّت الاشتراك شهرياً عبر Apple App Store أو Google Play Store. يُجدَّد اشتراكك تلقائياً عند انتهاء كل فترة إلا إذا ألغيته قبل 24 ساعة من موعد التجديد.</li>
-      <li><strong>الإلغاء:</strong> يمكنك إلغاء اشتراكك في أي وقت من خلال إعدادات App Store أو Google Play في جهازك. يسري الإلغاء في نهاية فترة الفوترة الحالية دون استرداد جزئي.</li>
+      <li><strong>الفوترة:</strong> يُفوَّت الاشتراك شهرياً عبر Apple App Store أو Google Play Store ويُجدَّد تلقائياً إلا إذا ألغيته قبل 24 ساعة من موعد التجديد.</li>
+      <li><strong>الإلغاء:</strong> يمكنك الإلغاء في أي وقت من إعدادات App Store أو Google Play. يسري الإلغاء في نهاية فترة الفوترة الحالية دون استرداد جزئي.</li>
       <li><strong>الاسترداد:</strong> تُعالَج طلبات الاسترداد من قبل Apple أو Google وفق سياساتهم الخاصة. نحن لا نعالج استردادات الاشتراك مباشرة.</li>
       <li><strong>الفترات التجريبية:</strong> حيثما قُدِّمت، تتحول الفترات التجريبية تلقائياً إلى اشتراكات مدفوعة ما لم تُلغَ قبل انتهائها.</li>
       <li><strong>تغيير المميزات:</strong> قد نعدّل مميزات Prime مع إشعار معقول. لن نزيل الميزات الأساسية خلال فترة الاشتراك دون تقديم استرداد أو تمديد تعويضي.</li>
     </ul>
+  </div>
 
-    <h2>٨. الملكية الفكرية</h2>
-    <p>اسم شِيْكُو وشعاره وتصميمه وجميع أكواد التطبيق والرسومات والمميزات (باستثناء محتوى المستخدمين) هي ملكية حصرية لشِيْكُو ومحمية بقوانين الملكية الفكرية. لا يجوز نسخها أو تعديلها أو توزيعها أو إنشاء أعمال مشتقة منها دون إذن خطي صريح منا.</p>
+  <div class="card">
+    <h2><span class="card-num">٨</span> الملكية الفكرية</h2>
+    <p>اسم شِيْكُو وشعاره وتصميمه وجميع أكواد التطبيق والرسومات والمميزات (باستثناء محتوى المستخدمين) هي ملكية حصرية لشِيْكُو ومحمية بقوانين الملكية الفكرية. لا يجوز نسخها أو تعديلها أو توزيعها دون إذن خطي صريح منا.</p>
+  </div>
 
-    <h2>٩. إخلاء المسؤولية عن الضمانات</h2>
+  <div class="card">
+    <h2><span class="card-num">٩</span> إخلاء المسؤولية عن الضمانات</h2>
     <p>يُقدَّم التطبيق "كما هو" و"حسب التوافر" دون أي ضمانات صريحة أو ضمنية. لا نضمن أن التطبيق سيكون دون انقطاع أو خالياً من الأخطاء.</p>
+  </div>
 
-    <h2>١٠. تحديد المسؤولية</h2>
-    <p>إلى أقصى حد يسمح به القانون المعمول به، لن يكون شِيْكُو ومشغّلوه مسؤولين عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية ناتجة عن استخدامك للتطبيق، بما في ذلك فقدان البيانات أو الأرباح أو الكوينز.</p>
-    <div class="highlight">لن تتجاوز مسؤوليتنا الإجمالية تجاهك عن أي مطالبة ناشئة عن هذه الشروط المبلغَ الذي دفعته لنا خلال الـ 12 شهراً السابقة للمطالبة، أو ما يعادل 100 دولار أمريكي، أيهما أكبر.</div>
+  <div class="card">
+    <h2><span class="card-num">١٠</span> تحديد المسؤولية</h2>
+    <p>إلى أقصى حد يسمح به القانون، لن يكون شِيْكُو ومشغّلوه مسؤولين عن أي أضرار غير مباشرة أو عرضية أو تبعية ناتجة عن استخدامك للتطبيق، بما في ذلك فقدان البيانات أو الأرباح أو الكوينز.</p>
+    <div class="highlight">لن تتجاوز مسؤوليتنا الإجمالية تجاهك المبلغَ الذي دفعته لنا خلال الـ 12 شهراً السابقة للمطالبة، أو ما يعادل 100 دولار أمريكي، أيهما أكبر.</div>
+  </div>
 
-    <h2>١١. الإنهاء</h2>
+  <div class="card">
+    <h2><span class="card-num">١١</span> الإنهاء</h2>
     <p>يمكنك حذف حسابك في أي وقت من خلال الإعدادات ← حذف الحساب. قد نعلّق أو ننهي حسابك في حال مخالفتك لهذه الشروط. عند الإنهاء:</p>
     <ul>
       <li>يُلغى وصولك للتطبيق فوراً</li>
       <li>قد يُزال محتواك</li>
       <li>تُصادَر الكوينز المتبقية ومزايا Prime دون استرداد (إلا ما قرره القانون)</li>
     </ul>
+  </div>
 
-    <h2>١٢. القانون الحاكم وتسوية النزاعات</h2>
-    <p>تخضع هذه الشروط للقوانين المعمول بها. يجب محاولة حل أي نزاع ناشئ عن هذه الشروط أولاً عبر التفاوض بحسن نية. في حال عدم الحل خلال 30 يوماً، يمكن إحالة النزاعات للتحكيم الملزم أو المحاكم المختصة في الولاية القضائية المعنية.</p>
+  <div class="card">
+    <h2><span class="card-num">١٢</span> القانون الحاكم وتسوية النزاعات</h2>
+    <p>تخضع هذه الشروط للقوانين المعمول بها. يجب محاولة حل أي نزاع ناشئ عن هذه الشروط أولاً عبر التفاوض بحسن نية. في حال عدم الحل خلال 30 يوماً، يمكن إحالة النزاعات للتحكيم الملزم أو المحاكم المختصة.</p>
+  </div>
 
-    <h2>١٣. التغييرات على هذه الشروط</h2>
+  <div class="card">
+    <h2><span class="card-num">١٣</span> التغييرات على هذه الشروط</h2>
     <p>قد نحدّث هذه الشروط بصفة دورية. سنخطرك بالتغييرات الجوهرية عبر إشعار فوري أو رسالة داخل التطبيق قبل 7 أيام على الأقل من نفاذها. استمرارك في استخدام التطبيق بعد التغييرات يُعدّ قبولاً للشروط المحدّثة.</p>
+  </div>
 
-    <h2>١٤. تواصل معنا</h2>
+  <div class="card">
+    <h2><span class="card-num">١٤</span> تواصل معنا</h2>
+    <p>لأي استفسارات حول هذه الشروط أو للإبلاغ عن المخالفات:</p>
     <div class="contact-box">
-      <p>لأي استفسارات حول هذه الشروط أو للإبلاغ عن المخالفات:</p>
       <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
       <p><strong>الموقع:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
     </div>
   </div>
-
 </div>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-logo">Shiqo</div>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+  <p>© 2026 Shiqo. All rights reserved.</p>
+</footer>
 
 <script>
   function showLang(lang) {
-    document.getElementById('section-en').classList.toggle('hidden', lang !== 'en');
-    document.getElementById('section-ar').classList.toggle('hidden', lang !== 'ar');
+    const isAr = lang === 'ar';
+    document.getElementById('section-en').classList.toggle('hidden', isAr);
+    document.getElementById('section-ar').classList.toggle('hidden', !isAr);
+    document.getElementById('btn-en').classList.toggle('active', !isAr);
+    document.getElementById('btn-ar').classList.toggle('active', isAr);
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+    if (isAr) {
+      document.getElementById('hero-name').textContent = 'شِيْكُو';
+      document.getElementById('hero-page-title').textContent = 'شروط الاستخدام';
+      document.getElementById('hero-dates').textContent = 'تاريخ النفاذ: 25 أبريل 2026 · آخر تحديث: 25 أبريل 2026';
+    } else {
+      document.getElementById('hero-name').textContent = 'Shiqo';
+      document.getElementById('hero-page-title').textContent = 'Terms of Service';
+      document.getElementById('hero-dates').innerHTML = 'Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026';
+    }
   }
 </script>
 </body>
