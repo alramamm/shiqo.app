@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Shiqo / سياسة الخصوصية — شِيْكُو</title>
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --section-bg: #f9fafb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Arabic', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+    .lang-toggle {
+      display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 32px;
+    }
+    .lang-toggle button {
+      padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--primary);
+      background: transparent; color: var(--primary); font-size: 14px; cursor: pointer;
+      font-weight: 600; transition: all 0.2s;
+    }
+    .lang-toggle button.active { background: var(--primary); color: #fff; }
+    .header { text-align: center; margin-bottom: 48px; }
+    .header .logo { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+    .header h1 { font-size: 22px; font-weight: 700; margin-top: 8px; }
+    .header .dates { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    h2 {
+      font-size: 17px; font-weight: 700; color: var(--primary);
+      margin: 36px 0 12px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    p { margin-bottom: 12px; font-size: 15px; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { font-size: 15px; margin-bottom: 6px; }
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: var(--section-bg); padding: 10px 14px; text-align: left; font-weight: 600; border: 1px solid var(--border); }
+    td { padding: 9px 14px; border: 1px solid var(--border); vertical-align: top; }
+    .highlight {
+      background: var(--section-bg); border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
+      font-size: 14px;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .contact-box {
+      background: var(--section-bg); border-radius: 12px;
+      padding: 20px 24px; margin-top: 16px;
+    }
+    .contact-box p { margin: 4px 0; font-size: 14px; }
+
+    /* Arabic section */
+    .ar { display: none; direction: rtl; text-align: right; }
+    .ar h2 { text-align: right; }
+    .ar ul, .ar ol { padding-left: 0; padding-right: 20px; }
+    .ar th { text-align: right; }
+    .ar .highlight { border-left: none; border-right: 4px solid var(--primary); border-radius: 8px 0 0 8px; }
+    .ar .lang-toggle { justify-content: flex-start; }
+
+    /* Active states */
+    .en.hidden, .ar.hidden { display: none !important; }
+    .en:not(.hidden) { display: block; }
+    .ar:not(.hidden) { display: block; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ═══════════════════════════ ENGLISH ═══════════════════════════ -->
+  <div class="en" id="section-en">
+    <div class="lang-toggle">
+      <button class="active" onclick="showLang('en')">English</button>
+      <button onclick="showLang('ar')">العربية</button>
+    </div>
+
+    <div class="header">
+      <div class="logo">Shiqo</div>
+      <h1>Privacy Policy</h1>
+      <div class="dates">Effective date: April 25, 2026 &nbsp;·&nbsp; Last updated: April 25, 2026</div>
+    </div>
+
+    <p>Welcome to <strong>Shiqo</strong> ("we", "us", or "our"). This Privacy Policy explains how we collect, use, share, and protect information about you when you use the Shiqo mobile application (the "App"). By using the App you agree to the practices described in this policy.</p>
+
+    <h2>1. Who We Are</h2>
+    <p>Shiqo is a social outfit battle and voting platform. You can contact us at:</p>
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
+      <p><strong>Website:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
+    </div>
+
+    <h2>2. Information We Collect</h2>
+
+    <p><strong>2.1 Account Information</strong></p>
+    <ul>
+      <li>Email address (required for registration)</li>
+      <li>Username</li>
+      <li>Date of birth (required — to verify minimum age of 16)</li>
+      <li>Gender (optional: male, female, or prefer not to say)</li>
+      <li>Country (optional)</li>
+      <li>Profile photo (optional)</li>
+    </ul>
+
+    <p><strong>2.2 Automatically Collected Information</strong></p>
+    <ul>
+      <li><strong>IP address</strong> — collected at registration and each time you upload a photo, for legal compliance and fraud prevention. Your IP is sent to a third-party geolocation service (ip-api.com) to determine your approximate city and country.</li>
+      <li>Push notification token (device token for delivering notifications)</li>
+      <li>Device type and operating system</li>
+      <li>App usage data: login dates, vote history, streak counts</li>
+    </ul>
+
+    <p><strong>2.3 User-Generated Content</strong></p>
+    <ul>
+      <li>Outfit photos you upload</li>
+      <li>Comments you post (optionally anonymously)</li>
+      <li>Votes, challenges, and gifts you send to other users</li>
+      <li>Hashtags and style poll responses</li>
+      <li>Support messages</li>
+    </ul>
+
+    <p><strong>2.4 Purchase and Subscription Information</strong></p>
+    <ul>
+      <li>Purchase history for Shiqo Coins and Prime subscriptions</li>
+      <li>Store transaction identifiers (via RevenueCat) — we do <strong>not</strong> store full payment card details</li>
+      <li>Subscription status and trial dates</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Purpose</th>
+          <th>Data Used</th>
+          <th>Legal Basis</th>
+        </tr>
+        <tr><td>Operate the App and provide core features (voting, battles, leaderboards)</td><td>All account and usage data</td><td>Contract performance</td></tr>
+        <tr><td>Send push notifications (new followers, challenges, results)</td><td>Push token, notification preferences</td><td>Consent (opt-in)</td></tr>
+        <tr><td>Process in-app purchases and subscriptions</td><td>Purchase data, transaction IDs</td><td>Contract performance</td></tr>
+        <tr><td>Automatic content moderation (detect explicit imagery)</td><td>Uploaded photos sent to AI moderation service</td><td>Legitimate interest (platform safety)</td></tr>
+        <tr><td>Admin analytics (aggregate usage stats, city distribution)</td><td>IP-derived city, usage data</td><td>Legitimate interest (service improvement)</td></tr>
+        <tr><td>Legal compliance, fraud prevention, and moderation</td><td>IP address, account data, violation history</td><td>Legal obligation / Legitimate interest</td></tr>
+      </table>
+    </div>
+
+    <h2>4. Third-Party Services</h2>
+    <p>We share data with the following service providers solely to operate the App:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr>
+        <tr><td><strong>Supabase</strong> (supabase.com)</td><td>Database, authentication, and file storage (hosted on AWS)</td><td>All user data and uploaded files</td></tr>
+        <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>In-app purchase and subscription management</td><td>User ID, purchase and subscription records</td></tr>
+        <tr><td><strong>ip-api.com</strong></td><td>IP geolocation (city/country detection)</td><td>Your IP address</td></tr>
+        <tr><td><strong>AI Content Moderation Service</strong></td><td>Automatic detection of explicit content in uploaded photos</td><td>Photo URL (public link, no personal identifiers)</td></tr>
+        <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>Push notifications</td><td>Device push token</td></tr>
+      </table>
+    </div>
+    <p>We do not sell your personal data. We do not share it with advertisers or use it for cross-app tracking.</p>
+
+    <h2>5. Data Retention</h2>
+    <ul>
+      <li><strong>Active accounts:</strong> Data is retained as long as your account is active.</li>
+      <li><strong>After account deletion:</strong> Personal data is deleted within 30 days. IP addresses associated with uploads may be retained for up to 12 months for legal compliance purposes.</li>
+      <li><strong>Backups:</strong> Residual copies may remain in encrypted backups for up to 90 days.</li>
+    </ul>
+
+    <h2>6. Your Rights</h2>
+    <p>Depending on where you live, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of the data we hold about you</li>
+      <li><strong>Correction</strong> — ask us to fix inaccurate information</li>
+      <li><strong>Deletion</strong> — request deletion of your account and personal data (also available directly in the App under Settings → Delete Account)</li>
+      <li><strong>Portability</strong> — receive your data in a structured format</li>
+      <li><strong>Objection / Restriction</strong> — object to certain processing activities</li>
+      <li><strong>Withdraw Consent</strong> — opt out of push notifications at any time in your device settings</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. We will respond within 30 days.</p>
+
+    <div class="highlight">
+      <strong>GDPR (EU/EEA users):</strong> We process your data under the lawful bases of contract performance, legitimate interest, and consent. You have the right to lodge a complaint with your local supervisory authority.
+    </div>
+    <div class="highlight">
+      <strong>CCPA (California residents):</strong> You have the right to know what data we collect, to request deletion, and to opt out of the sale of personal information. We do not sell personal information.
+    </div>
+    <div class="highlight">
+      <strong>PDPL (Saudi Arabia):</strong> We comply with the Personal Data Protection Law. You may contact us to exercise your data rights as described above.
+    </div>
+
+    <h2>7. Children's Privacy</h2>
+    <p>Shiqo is not intended for users under the age of 16. We do not knowingly collect data from anyone under 16. If we discover that a user is under 16, we will delete their account. If you believe a child has provided us with data, please contact <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
+
+    <h2>8. Security</h2>
+    <p>All data is transmitted over HTTPS/TLS. Your data is stored in Supabase (hosted on AWS) with industry-standard security practices. Passwords are managed by Supabase Auth and are never stored in plain text.</p>
+
+    <h2>9. Cookies and Tracking</h2>
+    <p>Shiqo is a mobile application and does not use browser cookies. We do not use third-party advertising SDKs or cross-app tracking technologies.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top and, for material changes, notify you via push notification or in-app message. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>11. Contact Us</h2>
+    <div class="contact-box">
+      <p>For any privacy-related questions or requests:</p>
+      <p><strong>Email:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
+      <p><strong>Website:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ ARABIC ═══════════════════════════ -->
+  <div class="ar hidden" id="section-ar">
+    <div class="lang-toggle">
+      <button onclick="showLang('en')">English</button>
+      <button class="active" onclick="showLang('ar')">العربية</button>
+    </div>
+
+    <div class="header">
+      <div class="logo">شِيْكُو</div>
+      <h1>سياسة الخصوصية</h1>
+      <div class="dates">تاريخ النفاذ: 25 أبريل 2026 &nbsp;·&nbsp; آخر تحديث: 25 أبريل 2026</div>
+    </div>
+
+    <p>مرحباً بك في <strong>شِيْكُو</strong> ("نحن" أو "التطبيق"). توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها ومشاركتها وحمايتها عند استخدام تطبيق شِيْكُو. باستخدامك للتطبيق فأنت توافق على الممارسات الموضحة في هذه السياسة.</p>
+
+    <h2>١. من نحن</h2>
+    <p>شِيْكُو هي منصة اجتماعية لمعارك الأزياء والتصويت. يمكنك التواصل معنا عبر:</p>
+    <div class="contact-box">
+      <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
+      <p><strong>الموقع:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
+    </div>
+
+    <h2>٢. المعلومات التي نجمعها</h2>
+
+    <p><strong>٢.١ معلومات الحساب</strong></p>
+    <ul>
+      <li>عنوان البريد الإلكتروني (مطلوب للتسجيل)</li>
+      <li>اسم المستخدم</li>
+      <li>تاريخ الميلاد (مطلوب — للتحقق من الحد الأدنى للعمر 16 سنة)</li>
+      <li>الجنس (اختياري: ذكر، أنثى، أو تفضيل عدم الإفصاح)</li>
+      <li>الدولة (اختياري)</li>
+      <li>صورة الملف الشخصي (اختياري)</li>
+    </ul>
+
+    <p><strong>٢.٢ المعلومات المجمّعة تلقائياً</strong></p>
+    <ul>
+      <li><strong>عنوان IP</strong> — يُجمع عند التسجيل وعند كل رفع صورة، لأغراض الامتثال القانوني ومنع الاحتيال. يُرسل عنوان IP إلى خدمة تحديد الموقع الجغرافي التابعة لطرف ثالث (ip-api.com) لتحديد المدينة والدولة التقريبية.</li>
+      <li>رمز الإشعارات (Push Token) الخاص بجهازك</li>
+      <li>نوع الجهاز ونظام التشغيل</li>
+      <li>بيانات استخدام التطبيق: تواريخ تسجيل الدخول، سجل التصويت، عداد التتابع</li>
+    </ul>
+
+    <p><strong>٢.٣ المحتوى الذي ينشئه المستخدمون</strong></p>
+    <ul>
+      <li>صور الأزياء التي ترفعها</li>
+      <li>التعليقات التي تكتبها (باختيارك بشكل مجهول)</li>
+      <li>أصواتك، التحديات، والهدايا التي ترسلها للمستخدمين الآخرين</li>
+      <li>الهاشتاقات واستجابات استطلاعات الأسلوب</li>
+      <li>رسائل الدعم الفني</li>
+    </ul>
+
+    <p><strong>٢.٤ معلومات الشراء والاشتراك</strong></p>
+    <ul>
+      <li>سجل الشراء لشِيْكُو كوينز واشتراك Prime</li>
+      <li>معرّفات معاملات المتجر (عبر RevenueCat) — نحن <strong>لا</strong> نحتفظ ببيانات بطاقات الدفع الكاملة</li>
+      <li>حالة الاشتراك وتواريخ الفترة التجريبية</li>
+    </ul>
+
+    <h2>٣. كيف نستخدم معلوماتك</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>الغرض</th>
+          <th>البيانات المستخدمة</th>
+          <th>الأساس القانوني</th>
+        </tr>
+        <tr><td>تشغيل التطبيق وتوفير الميزات الأساسية (التصويت، المعارك، لوحة المتصدرين)</td><td>جميع بيانات الحساب والاستخدام</td><td>تنفيذ العقد</td></tr>
+        <tr><td>إرسال إشعارات (متابعون جدد، تحديات، نتائج)</td><td>Push Token، تفضيلات الإشعارات</td><td>الموافقة (الاشتراك الاختياري)</td></tr>
+        <tr><td>معالجة عمليات الشراء والاشتراكات</td><td>بيانات الشراء، معرّفات المعاملات</td><td>تنفيذ العقد</td></tr>
+        <tr><td>مراقبة المحتوى تلقائياً (كشف الصور الصريحة)</td><td>الصور المرفوعة ترسل لخدمة مراقبة بالذكاء الاصطناعي</td><td>المصلحة المشروعة (سلامة المنصة)</td></tr>
+        <tr><td>تحليلات إدارية (إحصاءات مجمّعة، توزيع المدن)</td><td>المدينة المستنتجة من IP، بيانات الاستخدام</td><td>المصلحة المشروعة (تحسين الخدمة)</td></tr>
+        <tr><td>الامتثال القانوني، منع الاحتيال، الإشراف</td><td>عنوان IP، بيانات الحساب، سجل المخالفات</td><td>الالتزام القانوني / المصلحة المشروعة</td></tr>
+      </table>
+    </div>
+
+    <h2>٤. خدمات الأطراف الثالثة</h2>
+    <p>نشارك البيانات مع مزودي الخدمات التاليين حصراً لتشغيل التطبيق:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>الخدمة</th><th>الغرض</th><th>البيانات المشاركة</th></tr>
+        <tr><td><strong>Supabase</strong> (supabase.com)</td><td>قاعدة البيانات، المصادقة، وتخزين الملفات (مستضافة على AWS)</td><td>جميع بيانات المستخدم والملفات المرفوعة</td></tr>
+        <tr><td><strong>RevenueCat</strong> (revenuecat.com)</td><td>إدارة المشتريات داخل التطبيق والاشتراكات</td><td>معرّف المستخدم، سجلات الشراء والاشتراك</td></tr>
+        <tr><td><strong>ip-api.com</strong></td><td>تحديد الموقع الجغرافي من IP (المدينة/الدولة)</td><td>عنوان IP الخاص بك</td></tr>
+        <tr><td><strong>خدمة مراقبة المحتوى بالذكاء الاصطناعي</strong></td><td>الكشف التلقائي عن المحتوى الصريح في الصور المرفوعة</td><td>رابط الصورة العام (دون معرّفات شخصية)</td></tr>
+        <tr><td><strong>Expo / Firebase Cloud Messaging</strong></td><td>الإشعارات الفورية</td><td>Push Token الخاص بجهازك</td></tr>
+      </table>
+    </div>
+    <p>نحن لا نبيع بياناتك الشخصية، ولا نشاركها مع المعلنين، ولا نستخدمها لتتبع عبر التطبيقات.</p>
+
+    <h2>٥. مدة الاحتفاظ بالبيانات</h2>
+    <ul>
+      <li><strong>الحسابات النشطة:</strong> تُحتفظ بالبيانات طالما حسابك نشط.</li>
+      <li><strong>بعد حذف الحساب:</strong> تُحذف البيانات الشخصية خلال 30 يوماً. قد تُحتفظ بعناوين IP المرتبطة بالرفع لمدة تصل إلى 12 شهراً لأغراض الامتثال القانوني.</li>
+      <li><strong>النسخ الاحتياطية:</strong> قد تبقى نسخ متبقية في النسخ الاحتياطية المشفرة لمدة تصل إلى 90 يوماً.</li>
+    </ul>
+
+    <h2>٦. حقوقك</h2>
+    <p>بحسب موقعك الجغرافي، قد تتمتع بالحقوق التالية بشأن بياناتك الشخصية:</p>
+    <ul>
+      <li><strong>الوصول</strong> — طلب نسخة من البيانات التي نحتفظ بها عنك</li>
+      <li><strong>التصحيح</strong> — طلب تصحيح المعلومات غير الدقيقة</li>
+      <li><strong>الحذف</strong> — طلب حذف حسابك وبياناتك الشخصية (متاح أيضاً مباشرةً من التطبيق في الإعدادات ← حذف الحساب)</li>
+      <li><strong>نقل البيانات</strong> — استلام بياناتك بصيغة منظمة</li>
+      <li><strong>الاعتراض / التقييد</strong> — الاعتراض على أنشطة معالجة معينة</li>
+      <li><strong>سحب الموافقة</strong> — إيقاف الإشعارات في أي وقت من إعدادات جهازك</li>
+    </ul>
+    <p>لممارسة أي من هذه الحقوق، راسلنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>. سنرد خلال 30 يوماً.</p>
+
+    <div class="highlight">
+      <strong>اللائحة الأوروبية GDPR (المستخدمون في الاتحاد الأوروبي / المنطقة الاقتصادية الأوروبية):</strong> نعالج بياناتك بموجب أسس قانونية مشروعة. يحق لك تقديم شكوى لدى هيئة حماية البيانات المحلية.
+    </div>
+    <div class="highlight">
+      <strong>CCPA (سكان كاليفورنيا):</strong> يحق لك معرفة البيانات التي نجمعها، طلب حذفها، والاعتراض على بيعها. نحن لا نبيع البيانات الشخصية.
+    </div>
+    <div class="highlight">
+      <strong>نظام حماية البيانات الشخصية السعودي (PDPL):</strong> نلتزم بأحكام نظام حماية البيانات الشخصية. يمكنك التواصل معنا لممارسة حقوقك المذكورة أعلاه.
+    </div>
+
+    <h2>٧. خصوصية الأطفال</h2>
+    <p>تطبيق شِيْكُو غير مخصص للمستخدمين دون سن 16 عاماً. نحن لا نجمع بيانات من أي شخص دون 16 عاماً عن علم. إذا اكتشفنا أن مستخدماً أقل من 16 عاماً، سنحذف حسابه فوراً. إذا كنت تعتقد أن طفلاً قدّم لنا بياناته، يرجى التواصل معنا على <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a>.</p>
+
+    <h2>٨. الأمان</h2>
+    <p>تُنقل جميع البيانات عبر بروتوكول HTTPS/TLS المشفر. تُخزَّن بياناتك في Supabase (مستضافة على AWS) وفق ممارسات أمنية معيارية. تُدار كلمات المرور عبر Supabase Auth ولا تُخزَّن بصيغة نصية عادية أبداً.</p>
+
+    <h2>٩. ملفات تعريف الارتباط والتتبع</h2>
+    <p>شِيْكُو تطبيق جوّال ولا يستخدم ملفات تعريف الارتباط (Cookies). لا نستخدم SDKs إعلانية تابعة لجهات خارجية ولا تقنيات تتبع عبر التطبيقات.</p>
+
+    <h2>١٠. التغييرات على هذه السياسة</h2>
+    <p>قد نحدّث سياسة الخصوصية هذه بصفة دورية. عند إجراء أي تغيير، سنحدّث تاريخ "آخر تحديث" في الأعلى، وللتغييرات الجوهرية سنخطرك عبر إشعار فوري أو رسالة داخل التطبيق. استمرارك في استخدام التطبيق بعد التغييرات يُعدّ قبولاً للسياسة المحدّثة.</p>
+
+    <h2>١١. تواصل معنا</h2>
+    <div class="contact-box">
+      <p>لأي استفسارات أو طلبات تتعلق بالخصوصية:</p>
+      <p><strong>البريد الإلكتروني:</strong> <a href="mailto:privacy@shiqo.app">privacy@shiqo.app</a></p>
+      <p><strong>الموقع:</strong> <a href="https://shiqo.app">https://shiqo.app</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showLang(lang) {
+    document.getElementById('section-en').classList.toggle('hidden', lang !== 'en');
+    document.getElementById('section-ar').classList.toggle('hidden', lang !== 'ar');
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+</script>
+</body>
+</html>
